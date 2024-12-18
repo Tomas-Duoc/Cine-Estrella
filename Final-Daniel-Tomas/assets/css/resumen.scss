@@ -1,0 +1,60 @@
+@import "_style";
+@import "_header";
+@import "_footer";
+
+body {
+    main {
+        div.container {
+            div.row {
+                background-color: $color-primario;
+                border-radius: $radius-global;
+
+                div.col-md-6,
+                div.col-sm-12 {
+                    h2 {
+                        color: $color-realce-secundario;
+                    }
+                    
+                    p {
+                        span {
+                            color: $color-realce-secundario;
+                            font-weight: bold;
+                        }
+                    }
+
+                    form {
+                        input {
+                            border-color: $color-realce-secundario;
+                            box-shadow: none;
+                            transition: none;
+                        }
+
+                        div.row {
+                            div.col-md-auto {
+                                p {
+                                    &.da-total {
+                                        text-transform: uppercase;
+                                        font-size: 1.5rem;
+                                    }
+                                }
+
+                                button {
+                                    background-color: $color-realce-primario;
+                                    font-size: 1;
+                                    font-weight: bold;
+                                    border: none;
+                                    transition: none;
+                                    
+                                    img {
+                                        width: 25%;
+                                        height: auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

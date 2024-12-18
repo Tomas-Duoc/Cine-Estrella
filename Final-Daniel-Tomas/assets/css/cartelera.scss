@@ -1,0 +1,145 @@
+@import "_style";
+@import "_header";
+@import "_footer";
+
+.to-input-filter{
+    display: none;
+}
+
+[value="all"]:checked ~ main .to-row-post-pelicula .to-col-post-pelicula .posts-pelicula [data-category] {
+    display: block;
+}
+
+[value="puntarenas"]:checked ~ main .to-row-post-pelicula .to-col-post-pelicula .posts-pelicula .post-pelicula:not([data-category~="puntarenas"]),
+[value="puertonatales"]:checked ~ main .to-row-post-pelicula .to-col-post-pelicula .posts-pelicula .post-pelicula:not([data-category~="puertonatales"]){
+  display: none;
+}
+
+main {
+    .to-row-post-pelicula {
+        background-color: $color-primario;
+        border-radius: $radius-global;
+
+        .to-h1-cartelera {
+            color: $color-texto;
+            font-size: 2.5rem;
+        }
+
+        .to-p-subcartelera {
+            color: $color-texto;
+            font-size: $size-paragraph;
+        }
+
+        .to-col-post-pelicula {
+            .posts-pelicula {
+                display: flex;
+                flex-direction: column;
+                gap: 5rem;
+                list-style: none;
+
+                .to-article-post-pelicula {
+                    .to-col-img {
+                        max-width: 400px;
+
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    .to-col-info {
+                        color: $color-texto;
+                        font-size: $size-paragraph;
+
+                        span {
+                            color: $color-realce-secundario;
+                        }
+
+                        .to-box-sinopsis {
+                            overflow: scroll;
+                            height: 15vh;
+                        }
+                    }
+
+                    .to-col-fecha {
+                        background-color: $color-secundario;
+                        padding: 10px 0;
+                        border-radius: $radius-global;
+                        max-width: 400px;
+
+                        p {
+                            color: $color-texto;
+                            font-weight: 200;
+                            text-align: center;
+                            font-size: $size-paragraph;
+                            span{
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+
+                    .to-col-horas{
+                        h3 {
+                            color: $color-realce-secundario;
+                        }
+
+                        .to-box-horas {
+                            list-style: none;
+                            
+                            .to-horas {
+                                flex-direction: column;
+
+                                .col {
+                                    .to-link-hora {
+                                        background-color: $color-realce-primario;
+                                        color: $color-texto;
+                                        padding: 1px 10px;
+                                        border-radius: $radius-global;
+                                        text-decoration: none;
+                                    }
+                                }
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 530px){
+    main {
+        .to-row-post-pelicula{
+            .to-col-post-pelicula{   
+                .posts-pelicula{    
+                    .to-article-post-pelicula{   
+                        .to-col-info{
+                            .to-box-sinopsis{
+                                overflow: scroll;
+                                height: 30vh;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }                               
+}
+
+@media (min-width: 770px){
+    main {
+        .to-row-post-pelicula{
+            .to-col-post-pelicula{   
+                .posts-pelicula{    
+                    .to-article-post-pelicula{   
+                        .to-col-info{
+                            .to-box-sinopsis{
+                                overflow: visible;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }                               
+}

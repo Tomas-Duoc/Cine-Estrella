@@ -1,0 +1,127 @@
+@import "_style";
+@import "_header";
+@import "_footer";
+
+.to-input-filter {
+    display: none;
+}
+
+main {
+    .to-corousel-home {
+        img {
+            width: 100%;
+        }
+    }
+
+    .to-box-main {
+        gap: 3rem;
+
+        .to-row-post {
+            background-color: $color-primario;
+            margin: 0rem 16px 0 16px;
+            padding: 35px 16px 0 16px;
+            border-radius: $radius-global;
+
+            .to-h1-home {
+                color: $color-texto;
+            }
+
+            .to-p-subhome {
+                color: $color-texto;
+            }
+
+            .posts {
+                list-style: none;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                justify-content: center;
+        
+                .post{
+                    .to-article-post{
+                        figure{
+                            position: relative;
+
+                            &:hover .to-img-post {
+                                filter: brightness(0.6);
+                            }
+
+                            &:hover figcaption {
+                                display: flex;
+                            }
+
+                            &:focus .to-img-post {
+                                filter: brightness(0.6);
+                            }
+
+                            &:focus figcaption {
+                                display: flex;
+                            }
+
+                            .to-img-post {
+                                object-fit: cover;
+                                border-radius: $radius-global;
+                            }
+                        
+                            figcaption {
+                                position: absolute;
+                                top: 80px;
+                                width: 100%;
+                                border-radius: $radius-global;
+                                display: flex;
+                                gap: 5rem;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 2rem 0 2rem;
+                                display: none;
+
+                                .to-box-p {
+                                    color: $color-texto;
+                                    text-align: center;
+                                }
+
+                                a {
+                                    text-transform: uppercase;
+                                    font-weight: bold;
+                                    border-radius: $radius-global;
+                                    text-decoration: none;
+                                    color: $color-texto;
+                                    background-color: $color-realce-primario;
+                                    padding: 0.25rem 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .to-row-ubicaciones{
+            background-color: $color-primario;
+            margin: 0rem 16px 0 16px;
+            padding: 35px 16px 36px 16px;
+            border-radius: $radius-global;
+            color: $color-texto;
+
+            .to-box-maps {
+                .to-row-maps{
+                    iframe {
+                        width: 100%;
+                        height: 30vh;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+[value="all"]:checked ~ main .to-row-post .to-col-post .posts [data-category] {
+    display: block;
+}
+
+[value="puntarenas"]:checked ~ main .to-row-post .to-col-post .posts .post:not([data-category~="puntarenas"]),
+[value="puertonatales"]:checked ~ main .to-row-post .to-col-post .posts .post:not([data-category~="puertonatales"]) {
+  display: none;
+}
